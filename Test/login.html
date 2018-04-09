@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="购物网站" />
+		<meta name="description" content="购物网站" />
+		<title>登录页</title>
+		<link type="text/css" href="assets/global/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link type="text/css" href="css/iconfont/iconfont.css" rel="stylesheet" />
+		<link type="text/css" href="css/public.css" rel="stylesheet" />
+		<link type="text/css" href="css/common.css" rel="stylesheet" />
+		<link type="text/css" href="css/list.css" rel="stylesheet" />
+		<link type="text/css" href="css/login.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="assets/global/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+	</head>
+
+	<body>
+		<!--nav、banner-->
+		<div class="qm-logocon">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-xs-6">
+						<a href="javascript:;" class="logo">
+							<img src="images/logo.png" />
+						</a>
+						<a class="logon-text">
+							<span class="lo-shopping-text">登录页</span>
+						</a>
+					</div>
+					<div class="col-md-8">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--登录主体-->
+		<div class="qm-logincontent">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="qm-bg">
+							
+						</div>
+						<div class="login-contanier">
+							<form class="login-form" action="" id="form" method="post">
+								<div class="loginbox">
+									<div class="loginbox-tab">
+										<ul>
+											<li class="l-li-first">扫码登录</li>
+											<li class="cur">账户登录</li>
+										</ul>
+									</div>
+									<div class="pc-login">
+										<div class="login-erro">
+											<i class="iconfont icon-chahao fl color-fc"></i>
+											<span>请输入用户名/邮箱/手机号！</span>
+										</div>
+										<div class="loginbox-div mt-40">
+											<i class="iconfont icon-zhanghao"></i>
+											<input name="store_username" type="text" class="loginuser" value="" onclick="JavaScript:;" placeholder="用户名/手机/邮箱/门店会员卡号" />
+										</div>
+										<div class="loginbox-div">
+											<i class="iconfont icon-14-01"></i>
+											<input name="store_pwd" type="text" class="loginuser" value="" onclick="JavaScript:;" placeholder="请输入密码" />
+										</div>
+										<div class="loginbox-wjpwd">
+											<a href="javascript:;" class="fr jizhumima">忘记密码?</a>
+										</div>
+										<div class="loginbox-btn">
+											<input name="" type="button" class="loginbtn" value="登录" data_c="submit" />
+										</div>
+									</div>
+									<div class="scan-login" style="display: none;">
+										<div class="scan-box">
+											<h2>打开<i class="iconfont icon-weixin1 color-b2"></i>，登录商城<i class="iconfont icon-552dc065f0478 color-0"></i></h2>
+											<div class="qrcode">
+												<img src="images/qr-code-f.jpg" />
+											</div>
+											<div class="phone-scan">
+												<img src="images/phone-orange.png" />
+											</div>
+										</div>
+									</div>
+									<div class="loginbox-div mt-10 free-reg">
+										<a href="javascript:;" class="fr">免费注册有惊喜>></a>
+									</div>
+									<div class="bind-login">
+										<span>使用以下账号登录</span>
+										<div class="common-div">
+											<a href="javascript:;"><i class="iconfont icon-QQ"></i>QQ</a>
+											<a href="javascript:;"><i class="iconfont icon-weixin"></i>微信</a>
+											<a href="javascript:;" class="mendian"><i></i>门店会员卡</a>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-text">
+			<p>
+							Copyright ©2017 All Rights Reserved. 云小树科技（北京）有限公司版权所有 京ICP备18956456号
+		</p>
+		</div>
+		
+		<script type="text/javascript">
+			$(function(){
+				$(".qrcode").mouseover(function(){
+					$(this).addClass('egde');
+					$(".phone-scan").css("display","block");
+				})
+				$(".qrcode").mouseleave(function(){
+					$(this).removeClass('egde');
+					$(".phone-scan").css("display","none");
+				})
+				$(".qrcode").focus(function(){
+					$(this).addClass('egde');
+					$(".phone-scan").css("display","block");
+				})
+				$(".phone-scan").mousemove(function(){
+					$(".qrcode").addClass('egde');
+					$(this).css("display","block");
+				})
+				$(".loginbox-tab ul li").click(function(){
+					$(this).addClass('cur').siblings().removeClass('cur');
+					var index=$(this).index();
+					if(index==0){
+						$(this).parents('.loginbox').find('.scan-login').show();
+						$(this).parents('.loginbox').find('.pc-login').hide()
+					}
+					if(index==1){
+						$(this).parents('.loginbox').find('.pc-login').show();
+						$(this).parents('.loginbox').find('.scan-login').hide();
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>
